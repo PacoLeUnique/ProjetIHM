@@ -2,24 +2,28 @@ package main;
 
 import java.io.File;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 
 
 public class View extends Application {
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
 		
-		String videoPath = "C:\\Users\\mouge\\Documents\\Cours\\S6\\IHM\\test.mp4";
-		String videoFileURIStr = new File(videoPath).toURI().toString();
-		
-		//Instantiating Media class
+	/* 
+	   String videoPath = "C:\\Users\\mouge\\Documents\\Cours\\S6\\IHM\\test.mp4";
+	   String videoFileURIStr = new File(videoPath).toURI().toString();
+	   
+	   //Instantiating Media class
 		Media media = new Media(videoFileURIStr);
 		//Media media = new Media("");
 		
@@ -30,11 +34,11 @@ public class View extends Application {
 		//by setting this property to true, the Video will be played
 		mediaPlayer.setAutoPlay(true);
 		
+	  */
 		
-		//Setting group and scene
-		Group root = new Group();
-		root.getChildren().add(mediaView);
-		Scene scene = new Scene(root,500,400);
+		AnchorPane anchorPane = (AnchorPane)FXMLLoader.load(getClass().getResource("VideoLecteurFXML.fxml"));
+		Scene scene = new Scene(anchorPane,800,600);
+		
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Example video player");
 		primaryStage.show();
