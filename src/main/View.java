@@ -18,25 +18,12 @@ public class View extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		
-	/* 
-	   String videoPath = "C:\\Users\\mouge\\Documents\\Cours\\S6\\IHM\\test.mp4";
-	   String videoFileURIStr = new File(videoPath).toURI().toString();
-	   
-	   //Instantiating Media class
-		Media media = new Media(videoFileURIStr);
-		//Media media = new Media("");
-		
-		//Instantiating MediaPlayer class
-		MediaPlayer mediaPlayer = new MediaPlayer(media);
-		//Instantiating MediaView class
-		MediaView mediaView = new MediaView(mediaPlayer);
-		//by setting this property to true, the Video will be played
-		mediaPlayer.setAutoPlay(true);
-		
-	  */
+		System.out.println("FIRST");
+
 		
 		AnchorPane anchorPane = (AnchorPane)FXMLLoader.load(getClass().getResource("VideoLecteurFXML.fxml"));
+		
+		System.out.println("DEUX");
 		Scene scene = new Scene(anchorPane,800,600);
 		
 		primaryStage.setScene(scene);
@@ -48,3 +35,4 @@ public class View extends Application {
 		Application.launch(args);
 	}
 }
+

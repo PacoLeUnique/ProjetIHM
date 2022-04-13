@@ -4,14 +4,17 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:controller="main.VideoLecteurController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="main.VideoLecteurController">
    <children>
       <Button fx:id="playButton" layoutX="50.0" layoutY="500.0" mnemonicParsing="false" onAction="#playVideo" prefHeight="50.0" prefWidth="200.0" text="PLAY" />
       <Button fx:id="pauseButton" layoutX="300.0" layoutY="500.0" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="50.0" prefWidth="200.0" text="PAUSE" />
       <Button fx:id="stopButton" layoutX="550.0" layoutY="500.0" mnemonicParsing="false" onAction="#stopVideo" prefHeight="50.0" prefWidth="200.0" text="STOP " />
       <MediaView fx:id="mediaView" fitHeight="450.0" fitWidth="800.0" />
-      <ProgressBar fx:id="progressBar" layoutY="470.0" prefHeight="10.0" prefWidth="800.0" progress="0.0" />
+      <ProgressBar fx:id="progressBar" layoutX="60.0" layoutY="470.0" prefHeight="9.0" prefWidth="680.0" progress="0.0" AnchorPane.leftAnchor="60.0" />
+      <Text fx:id="progressTimer" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" textAlignment="CENTER" wrappingWidth="59.33984375" />
+      <Text fx:id="videoLengthTimer" layoutX="740.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" textAlignment="CENTER" wrappingWidth="59.33984375" />
+      <Text fx:id="slidingProgressTimer" layoutX="289.0" layoutY="467.0" strokeType="OUTSIDE" visible="false" strokeWidth="0.0" text="0:00" textAlignment="CENTER" />
    </children>
 </AnchorPane>
