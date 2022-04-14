@@ -11,9 +11,11 @@ import java.util.ArrayList;
 public class View extends Application {
 
 	ArrayList<Categorie> Categories = new ArrayList<>();
+	ArrayList<Utilisateur> Users = new ArrayList<>();
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Users.add(new Utilisateur("Admin", Utilisateur.Rang.ADULT, "Admin"));
 		Categories.add(new Categorie("None"));
 		
 		Pane pane = FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml"));
