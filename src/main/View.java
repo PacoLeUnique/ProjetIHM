@@ -1,33 +1,28 @@
 package main;
 
-import java.io.File;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+
+import java.util.ArrayList;
 
 
 public class View extends Application {
-	
-	
+
+	ArrayList<Video> Videos = new ArrayList<>();
+
+
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		System.out.println("FIRST");
+		Pane pane = FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml"));
 
-		
-		AnchorPane anchorPane = (AnchorPane)FXMLLoader.load(getClass().getResource("VideoLecteurFXML.fxml"));
-		
-		System.out.println("DEUX");
-		Scene scene = new Scene(anchorPane,800,600);
-		
+		Scene scene = new Scene(pane,800,600);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Example video player");
+		primaryStage.setTitle("Projet IHM");
 		primaryStage.show();
 	}
 	
