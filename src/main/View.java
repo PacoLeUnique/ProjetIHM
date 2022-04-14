@@ -8,15 +8,13 @@ import javafx.scene.Scene;
 
 import java.util.ArrayList;
 
-
 public class View extends Application {
 
-	ArrayList<Video> Videos = new ArrayList<>();
-
-
+	ArrayList<Categorie> Categories = new ArrayList<>();
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Categories.add(new Categorie("None"));
 		
 		Pane pane = FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml"));
 
