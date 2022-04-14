@@ -6,7 +6,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="main.VideoLecteurController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="main.Controllers.VideoLecteurController">
    <children>
       <Button fx:id="playButton" layoutX="50.0" layoutY="500.0" mnemonicParsing="false" onAction="#playVideo" prefHeight="50.0" prefWidth="200.0" text="PLAY" />
       <Button fx:id="pauseButton" layoutX="300.0" layoutY="500.0" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="50.0" prefWidth="200.0" text="PAUSE" />
