@@ -5,38 +5,34 @@ import java.util.ArrayList;
 public class Categorie {
 
     private String nom;
-    private ArrayList<Integer> permissions;
     private ArrayList<Video> Videos = new ArrayList<>();
+    private ArrayList<Permission> permissions = new ArrayList<>();
 
     /**
-     * Créer un Objet Video avec un BlackScreen en miniature par default
+     * Créer une Categorie de Video qui est une liste avec les permissions au maximum à la creation
      * @param Nom Nom de la categorie
-     * @param Permissions Definie les permissions de la categorie | tout les droits sont données par default (facultatif)
      */
-    public Categorie(String Nom, ArrayList<Integer> Permissions) {
-        this.nom = Nom;
-        this.permissions = Permissions;
-    }
-
     public Categorie(String Nom) {
         this.nom = Nom;
-        this.permissions = null;
     }
 
     /** Getter du nom */
     public String getNom() { return nom; }
-    /** Getter des permissions */
-    public ArrayList<Integer> getPermissions() { return permissions; }
     /** Getter des videos */
     public ArrayList<Video> getVideos() { return Videos; }
+    /** Getter des permissions */
+    public ArrayList<Permission> getPermissions() { return permissions; }
 
     /** Change le nom */
     public void setNom(String nouveauNom) { this.nom = nouveauNom; }
-    /** Change les permissions de la categorie */
-    public void setPermissions(ArrayList<Integer> nouvellesPermissions) { this.permissions = nouvellesPermissions; }
 
     /** Ajoute une video à la categorie */
     public void addVideo(Video video) { Videos.add(video); }
     /** Retire une video de la categorie */
     public void removeVideo(Video video) { Videos.remove(video); }
+
+    /** Ajoute une permission */
+    public void addPermission(Permission Permission) { this.permissions.add(Permission); }
+    /** Retire une permission */
+    public void removePermission(Permission Permission) { this.permissions.remove(Permission); }
 }
