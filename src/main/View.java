@@ -15,13 +15,24 @@ public class View extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// On creer un profil Administrateur
 		Users.add(new Utilisateur("Admin", Utilisateur.Rang.ADULT, "Admin"));
-		Categories.add(new Categorie("None"));
-		
-		Pane pane = FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml"));
+		// On creer un profil Invite
+		Users.add(new Utilisateur("Invité"));
 
-		Scene scene = new Scene(pane,800,600);
-		primaryStage.setScene(scene);
+		// On creer la categorie de base (pour les videos sans categorie)
+		Categories.add(new Categorie("None"));
+
+		// On charge les fichiers FXML
+		// TODO Pane accueil = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+		// TODO Pane login = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+		// TODO Pane video_selector = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+		// TODO Pane manage_users = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+		// TODO Pane create_user = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+
+		Scene lecteur = new Scene(FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml")), 800, 600);
+
+		primaryStage.setScene(lecteur);
 		primaryStage.setTitle("Projet IHM");
 		primaryStage.show();
 	}
