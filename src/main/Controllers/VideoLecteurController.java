@@ -27,6 +27,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Video;
 
 public class VideoLecteurController implements Initializable {
 	
@@ -36,7 +37,9 @@ public class VideoLecteurController implements Initializable {
 	@FXML private Text progressTimer, videoLengthTimer, slidingProgressTimer;
 	@FXML private Slider volumeBar;
 	@FXML private Circle sliderProgressBar;
-	
+
+	private Video video;
+
 	private Timer timer = new Timer();
 	private MediaPlayer mediaPlayer;
 	private File file;
@@ -45,7 +48,7 @@ public class VideoLecteurController implements Initializable {
 	private boolean isMouseOnProgressBar, isSliderDragged;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		file = new File("videos/logobi.mp4");
+		file = new File(this.video.getPathname());
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
@@ -272,5 +275,6 @@ public class VideoLecteurController implements Initializable {
 
 		return xmouse/length;
 	}
-	
+
+	public void sendVideo(Video Video){ this.video=Video;}
 }

@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import main.Controllers.accueilController;
-import main.Controllers.loginController;
 
 import java.util.ArrayList;
 
@@ -31,12 +30,6 @@ public class View extends Application {
 		// On envoie les donnees au Controller
 		accueilController Controller = loader.getController();
 		Controller.sendModel(this.Categories, this.Users);
-
-		// TODO Pane video_selector = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
-		// TODO Pane manage_users = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
-		// TODO Pane create_user = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
-
-		//Scene lecteur = new Scene(FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml")), 800, 600);
 
 		Scene scene = new Scene(root, 800, 600);
 		primaryStage.setScene(scene);

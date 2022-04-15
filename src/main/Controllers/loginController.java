@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import main.Categorie;
 import main.Utilisateur;
@@ -18,8 +18,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class loginController {
-
-    public loginController(){}
 
     @FXML Label Pseudo;
     @FXML Pane Image;
@@ -51,6 +49,11 @@ public class loginController {
     public void setUser(Utilisateur User) {
         this.user = User;
         this.Pseudo.setText(User.getPseudo());
+        this.Image.setBackground(new Background(new BackgroundImage(   User.getImage(),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT)));
     }
 
     public void sendModel(ArrayList<Categorie> Categories, ArrayList<Utilisateur> Users) {

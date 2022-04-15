@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.VideoSelectorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.categorieController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
       <GridPane hgap="10.0" layoutX="50.0" layoutY="200.0" prefHeight="350.0" prefWidth="700.0" vgap="10.0">
@@ -26,64 +26,55 @@
          <children>
             <Pane fx:id="Image1" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur1" text="Jouer" />
-                  <Button fx:id="Options1_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options1" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie1" text="Voir" />
                   <Label fx:id="Titre1" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur2" text="Jouer" />
-                  <Button fx:id="Options2_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options2" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie2" text="Voir" />
                   <Label fx:id="Titre2" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur3" text="Jouer" />
-                  <Button fx:id="Options3_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options3" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie3" text="Voir" />
                   <Label fx:id="Titre3" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image4" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur4" text="Jouer" />
-                  <Button fx:id="Options4_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options4" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie4" text="Voir" />
                   <Label fx:id="Titre4" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur5" text="Jouer" />
-                  <Button fx:id="Options5_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options5" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie5" text="Voir" />
                   <Label fx:id="Titre5" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur6" text="Jouer" />
-                  <Button fx:id="Options6_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options6" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie6" text="Voir" />
                   <Label fx:id="Titre6" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image7" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur7" text="Jouer" />
-                  <Button fx:id="Options7_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options7" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie7" text="Voir" />
                   <Label fx:id="Titre7" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur8" text="Jouer" />
-                  <Button fx:id="Options8_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options8" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie8" text="Voir" />
                   <Label fx:id="Titre8" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
             <Pane fx:id="Image9" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_lecteur9" text="Jouer" />
-                  <Button fx:id="Options9_button" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#goto_options9" text="Options" />
+                  <Button layoutX="91.0" layoutY="43.0" mnemonicParsing="false" onAction="#goto_categorie9" text="Voir" />
                   <Label fx:id="Titre9" layoutY="88.0" prefHeight="17.0" prefWidth="194.0" />
                </children>
             </Pane>
@@ -94,8 +85,6 @@
       <Button layoutX="500.0" layoutY="38.0" mnemonicParsing="false" onAction="#recherche" text="Chercher" />
       <Button layoutX="687.0" layoutY="138.0" mnemonicParsing="false" onAction="#trierAZ" prefHeight="25.0" prefWidth="63.0" text="Trier A-Z" />
       <Button fx:id="goto_management_button" layoutX="675.0" layoutY="38.0" mnemonicParsing="false" onAction="#goto_management" text="Utilisateurs" />
-      <Button layoutX="50.0" layoutY="138.0" mnemonicParsing="false" onAction="#goto_categories" text="Categories" />
-      <Button fx:id="addVideo_button" contentDisplay="TOP" layoutX="220.0" layoutY="138.0" mnemonicParsing="false" onAction="#addVideo" prefHeight="25.0" prefWidth="120.0" text="Ajouter une vidéo" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button fx:id="setPermissions_button" layoutX="470.0" layoutY="138.0" mnemonicParsing="false" onAction="#setPermissions" prefHeight="25.0" prefWidth="100.0" text="Permissions" />
+      <Button fx:id="addVideo_button" contentDisplay="TOP" layoutX="220.0" layoutY="138.0" mnemonicParsing="false" onAction="#addVideo" prefHeight="25.0" prefWidth="136.0" text="Ajouter une Catégorie" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
    </children>
 </Pane>
