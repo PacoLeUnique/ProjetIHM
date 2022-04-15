@@ -21,7 +21,7 @@
          </font></Label>
       <Button layoutX="363.0" layoutY="400.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goto_accueil" text="Retour" />
-      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="373.0" layoutY="334.0" text="test" textAlignment="CENTER" textOverrun="CLIP">
+      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="300.0" layoutY="332.0" text="test" textAlignment="CENTER" textOverrun="CLIP">
          <font>
             <Font size="29.0" />
          </font>

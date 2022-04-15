@@ -1,15 +1,21 @@
 package main.Controllers;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.lang.Thread;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
@@ -19,12 +25,13 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class VideoLecteurController implements Initializable {
 	
 	@FXML private MediaView mediaView;
-	@FXML private Button playButton, pauseButton, stopButton;
+	@FXML private Button playButton, pauseButton, stopButton, retourButton;
 	@FXML private ProgressBar progressBar;
 	@FXML private Text progressTimer, videoLengthTimer, slidingProgressTimer;
 	@FXML private Slider volumeBar;
@@ -47,8 +54,9 @@ public class VideoLecteurController implements Initializable {
 		isSliderDragged = false;
 		
 		
-		// On patiente 2,5 secondes, le temps de laisser tout le fichier FXML s'initialiser correctement
-		try { Thread.sleep(2500); } catch (InterruptedException e1) {	}
+		// On patiente 2 secondes, le temps de laisser tout le fichier FXML s'initialiser correctement
+		//    je sais vrmt pas pourquoi ça fait ça ptdr
+		try { Thread.sleep(2000); } catch (InterruptedException e1) {	}
 		
 		//On définit ce qui se passe quand on clique sur l'écran de vidéo
 		mediaView.setOnMouseClicked(e -> {
@@ -63,6 +71,8 @@ public class VideoLecteurController implements Initializable {
 			case PLAYING:
 				mediaPlayer.pause();
 				break;
+			case READY:
+				mediaPlayer.play();
 				
 			default:
 				mediaPlayer.pause();
@@ -190,6 +200,19 @@ public class VideoLecteurController implements Initializable {
 		progressBar.setProgress(ratio);
 	}
 
+	@FXML 
+	private void changeScene(Event e) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/accueil.fxml"));
+        Parent root = loader.load();
+        
+        // Attention ça load pas les Users pour le moment
+        Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, 800,600);
+        stage.setScene(scene);
+        stage.show();
+
+	}
+	
 	@FXML
 	public void playVideo() {
 		mediaPlayer.play();
@@ -210,6 +233,7 @@ public class VideoLecteurController implements Initializable {
 	public void changeVolume() {
 		mediaPlayer.setVolume(volumeBar.getValue()/100);
 	}
+	
 	
 	
 	/** Fonction toTimecode
