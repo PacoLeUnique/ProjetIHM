@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.loginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.loginController">
    <children>
       <Label layoutX="342.0" layoutY="100.0" text="Qui es-tu ?">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="325.0" layoutY="350.0" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="325.0" layoutY="350.0" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" text="" />
       <Pane fx:id="Image" layoutX="300.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" />
       <TextField fx:id="password_field" layoutX="300.0" layoutY="375.0" prefHeight="25.0" prefWidth="200.0" />
       <Label layoutX="223.0" layoutY="375.0" prefHeight="25.0" text="Mot de Passe :" />
