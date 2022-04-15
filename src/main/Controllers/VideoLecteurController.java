@@ -3,6 +3,7 @@ package main.Controllers;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -26,7 +27,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import main.Categorie;
 import main.Utilisateur;
 
 public class VideoLecteurController implements Initializable {
@@ -41,6 +42,10 @@ public class VideoLecteurController implements Initializable {
 	//2 variables qui sont initialisées dans load()
 	private Utilisateur user;  // Un pointeur vers le user actuel qui regarde la vidéo
 	private String pathname;
+	
+	// Le modele
+    private ArrayList<Categorie> categories;
+    private ArrayList<Utilisateur> users;
 	
 	private Timer timer = new Timer();
 	private MediaPlayer mediaPlayer;
@@ -124,6 +129,10 @@ public class VideoLecteurController implements Initializable {
 		pathname = p;
 	}
 	
+	public void sendModel(ArrayList<Categorie> c, ArrayList<Utilisateur> u) {
+		users = u;
+		categories = c;
+	}
 	
 	@FXML
 	private void mouseOnProgressBarClicked(MouseEvent e) {
@@ -224,8 +233,11 @@ public class VideoLecteurController implements Initializable {
 		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/accueil.fxml"));
         Parent root = loader.load();
+        accueilController controller = loader.getController();
         
-        // Attention ça load pas les Users pour le moment
+        // On fait passer le modele 
+        controller.sendModel(categories, users);
+        
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root, 800,600);
         stage.setScene(scene);
