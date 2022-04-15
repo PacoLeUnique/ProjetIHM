@@ -2,9 +2,11 @@ package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import main.Controllers.accueilController;
+import main.Controllers.loginController;
 
 import java.util.ArrayList;
 
@@ -19,20 +21,25 @@ public class View extends Application {
 		Users.add(new Utilisateur("Admin", Utilisateur.Rang.ADULT, "Admin"));
 		// On creer un profil Invite
 		Users.add(new Utilisateur("Invité"));
-
 		// On creer la categorie de base (pour les videos sans categorie)
 		Categories.add(new Categorie("None"));
 
-		// On charge les fichiers FXML
-		// TODO Pane accueil = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
-		// TODO Pane login = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
+		// On charge le fichier FXML
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLs/accueil.fxml"));
+		Parent root = loader.load();
+
+		// On envoie les donnees au Controller
+		accueilController Controller = loader.getController();
+		Controller.sendModel(this.Categories, this.Users);
+
 		// TODO Pane video_selector = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
 		// TODO Pane manage_users = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
 		// TODO Pane create_user = FXMLLoader.load(getClass().getResource("FXMLs/?????.fxml"));
 
-		Scene lecteur = new Scene(FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml")), 800, 600);
+		//Scene lecteur = new Scene(FXMLLoader.load(getClass().getResource("FXMLs/VideoLecteurFXML.fxml")), 800, 600);
 
-		primaryStage.setScene(lecteur);
+		Scene scene = new Scene(root, 800, 600);
+		primaryStage.setScene(scene);
 		primaryStage.setTitle("Projet IHM");
 		primaryStage.show();
 	}
