@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.accueilController">
    <children>
       <Label layoutX="342.0" layoutY="100.0" text="Qui es-tu ?">
@@ -27,22 +26,38 @@
           <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="Pseudo1" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login1" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo2" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login2" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo3" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login3" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo4" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login4" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo5" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login5" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo6" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login6" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo7" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login7" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Label fx:id="Pseudo8" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#goto_login8" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Pane fx:id="Image1" onMouseClicked="#goto_login1" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="Image2" onMouseClicked="#goto_login2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-            <Pane fx:id="Image3" onMouseClicked="#goto_login3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
-            <Pane fx:id="Image4" onMouseClicked="#goto_login4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
-            <Pane fx:id="Image5" onMouseClicked="#goto_login5" prefHeight="200.0" prefWidth="154.0" GridPane.rowIndex="1" />
-            <Pane fx:id="Image6" onMouseClicked="#goto_login6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Pane fx:id="Image7" onMouseClicked="#goto_login7" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Pane fx:id="Image8" onMouseClicked="#goto_login8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Pane fx:id="Image1" onMouseClicked="#goto_login1" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="Pseudo1" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login1" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image2" onMouseClicked="#goto_login2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="Pseudo2" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login2" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image3" onMouseClicked="#goto_login3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label fx:id="Pseudo3" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login3" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image4" onMouseClicked="#goto_login4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Label fx:id="Pseudo4" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login4" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image5" onMouseClicked="#goto_login5" prefHeight="200.0" prefWidth="154.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="Pseudo5" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login5" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image6" onMouseClicked="#goto_login6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="Pseudo6" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login6" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image7" onMouseClicked="#goto_login7" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="Pseudo7" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login7" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
+            <Pane fx:id="Image8" onMouseClicked="#goto_login8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="Pseudo8" alignment="CENTER" contentDisplay="TOP" layoutX="9.0" layoutY="119.0" onMouseClicked="#goto_login8" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+               </children></Pane>
          </children>
       </GridPane>
    </children>

@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import main.Categorie;
 import main.Utilisateur;
@@ -60,7 +60,14 @@ public class accueilController {
     public void sendModel(ArrayList<Categorie> Categories, ArrayList<Utilisateur> Users) {
         this.categories = Categories;
         this.users = Users;
-        if(Users.get(0)!=null)this.Pseudo1.setText(Users.get(0).getPseudo());
+        if(Users.get(0)!=null) {
+            this.Pseudo1.setText(Users.get(0).getPseudo());
+            this.Image1.setBackground(new Background(new BackgroundImage(   Users.get(0).getImage(),
+                                                                            BackgroundRepeat.NO_REPEAT,
+                                                                            BackgroundRepeat.NO_REPEAT,
+                                                                            BackgroundPosition.DEFAULT,
+                                                                            BackgroundSize.DEFAULT)));
+        }
         //if(Users.get(1)!=null)this.Pseudo2.setText(Users.get(1).getPseudo());
         //if(Users.get(2)!=null)this.Pseudo3.setText(Users.get(2).getPseudo());
         //if(Users.get(3)!=null)this.Pseudo4.setText(Users.get(3).getPseudo());
