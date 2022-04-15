@@ -14,11 +14,11 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="325.0" layoutY="350.0" onMouseClicked="#goto_login1" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
-      <Pane fx:id="Image" layoutX="300.0" layoutY="175.0" onMouseClicked="#goto_login1" prefHeight="200.0" prefWidth="200.0" />
-      <TextField fx:id="passwod_field" layoutX="300.0" layoutY="375.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label fx:id="Pseudo" alignment="CENTER" contentDisplay="TOP" layoutX="325.0" layoutY="350.0" prefHeight="25.0" prefWidth="150.0" textOverrun="CLIP" />
+      <Pane fx:id="Image" layoutX="300.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="password_field" layoutX="300.0" layoutY="375.0" prefHeight="25.0" prefWidth="200.0" />
       <Label layoutX="223.0" layoutY="375.0" prefHeight="25.0" text="Mot de Passe :" />
       <Button layoutX="363.0" layoutY="400.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Retour" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goto_accueil" text="Retour" />
    </children>
 </Pane>
