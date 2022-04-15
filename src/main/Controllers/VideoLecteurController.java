@@ -12,7 +12,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,6 +27,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import main.Utilisateur;
+
 public class VideoLecteurController implements Initializable {
 	
 	@FXML private MediaView mediaView;
@@ -37,6 +38,10 @@ public class VideoLecteurController implements Initializable {
 	@FXML private Slider volumeBar;
 	@FXML private Circle sliderProgressBar;
 	
+	//2 variables qui sont initialisées dans load()
+	private Utilisateur user;  // Un pointeur vers le user actuel qui regarde la vidéo
+	private String pathname;
+	
 	private Timer timer = new Timer();
 	private MediaPlayer mediaPlayer;
 	private File file;
@@ -45,7 +50,7 @@ public class VideoLecteurController implements Initializable {
 	private boolean isMouseOnProgressBar, isSliderDragged;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		file = new File("videos/logobi.mp4");
+		file = new File("videos/dog.mp4");
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
@@ -56,7 +61,7 @@ public class VideoLecteurController implements Initializable {
 		
 		// On patiente 2 secondes, le temps de laisser tout le fichier FXML s'initialiser correctement
 		//    je sais vrmt pas pourquoi ça fait ça ptdr
-		try { Thread.sleep(2000); } catch (InterruptedException e1) {	}
+		//try { Thread.sleep(2000); } catch (InterruptedException e1) {	}
 		
 		//On définit ce qui se passe quand on clique sur l'écran de vidéo
 		mediaView.setOnMouseClicked(e -> {
@@ -90,13 +95,13 @@ public class VideoLecteurController implements Initializable {
 			}
 		});
 		
-		//Toutes les demi-secondes, on rafraichit la barre de lecture de vidéo
+		//Toutes les 0,25 seconde, on rafraichit la barre de lecture de vidéo
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
 				
 				Duration timecode = mediaPlayer.getCurrentTime();
 				
-				System.out.println("1 DEMI SECONDE, timecode : " + timecode);
+				System.out.println("0,25s tick, timecode : " + timecode);
 				double ratio = timecode.toMinutes()/videoLength.toMinutes();
 				if(!isMouseOnProgressBar) {
 					progressBar.setProgress(ratio);
@@ -105,9 +110,20 @@ public class VideoLecteurController implements Initializable {
 				progressTimer.setText(toTimecode(timecode));
 				
 			}
-		} , 500, 500);
+		} , 250, 250);
 		
 	}
+	
+	/** fonction sendInfo
+	 * 	récupère les infos losrqu'on change de scène.
+	 * @param u le user connecté
+	 * @param p le path vers la vidéo
+	 */
+	public void sendInfo(Utilisateur u, String p) {
+		user = u;
+		pathname = p;
+	}
+	
 	
 	@FXML
 	private void mouseOnProgressBarClicked(MouseEvent e) {
@@ -202,6 +218,10 @@ public class VideoLecteurController implements Initializable {
 
 	@FXML 
 	private void changeScene(Event e) throws IOException {
+		mediaPlayer.stop();
+		timer.cancel();
+		timer.purge();
+		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/accueil.fxml"));
         Parent root = loader.load();
         
