@@ -50,6 +50,7 @@ public class VideoLecteurController implements Initializable {
 		// On patiente 2,5 secondes, le temps de laisser tout le fichier FXML s'initialiser correctement
 		try { Thread.sleep(2500); } catch (InterruptedException e1) {	}
 		
+		//On définit ce qui se passe quand on clique sur l'écran de vidéo
 		mediaView.setOnMouseClicked(e -> {
 			
 			switch(mediaPlayer.getStatus()) {
@@ -69,6 +70,7 @@ public class VideoLecteurController implements Initializable {
 			}
 		});
 		
+		
 		mediaPlayer.setOnReady(new Runnable() {
 			@Override
 			public void run() {
@@ -78,6 +80,7 @@ public class VideoLecteurController implements Initializable {
 			}
 		});
 		
+		//Toutes les demi-secondes, on rafraichit la barre de lecture de vidéo
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
 				
@@ -98,8 +101,6 @@ public class VideoLecteurController implements Initializable {
 	
 	@FXML
 	private void mouseOnProgressBarClicked(MouseEvent e) {
-		// TODO enculé de ta race
-		// Faut que quand ça clique ça aille au bon timecode
 		double ratio = getMouseRatioOnProgressBar(progressBar, e);
 		double d = videoLength.toMinutes()*ratio;
 		Duration new_timecode = Duration.minutes(d);
@@ -210,6 +211,12 @@ public class VideoLecteurController implements Initializable {
 		mediaPlayer.setVolume(volumeBar.getValue()/100);
 	}
 	
+	
+	/** Fonction toTimecode
+	 * Convertit une durée en timecode lisible.
+	 * @param d une durée
+	 * @return un string de la forme "05:23" ou encore "01:02:45" si la durée fait plus d'1h 
+	 */
 	private String toTimecode(Duration d) {
 		
 		String rep = "";
@@ -228,6 +235,12 @@ public class VideoLecteurController implements Initializable {
 		return rep;
 	}
 	
+	/** Fonction getMouseRatioOnProgressBar
+	 *  calucle le ratio de la vidéo en fonction de la position de la souris sur la barre de lecture vidéo
+	 * @param pb une progressBar
+	 * @param e un MouseEvent
+	 * @return le ratio
+	 */
 	private double getMouseRatioOnProgressBar(ProgressBar pb, MouseEvent e){
 		
 		double length = pb.getWidth();
