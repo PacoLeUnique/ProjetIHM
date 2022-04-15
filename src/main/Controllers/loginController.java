@@ -34,6 +34,7 @@ public class loginController {
 
     public void goto_accueil(ActionEvent actionEvent) throws IOException {
 
+        // On charge le fxml
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/accueil.fxml"));
         Parent root = loader.load();
         accueilController Controller = loader.getController();
