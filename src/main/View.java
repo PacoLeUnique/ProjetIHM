@@ -23,6 +23,8 @@ public class View extends Application {
 		// On creer la categorie de base (pour les videos sans categorie)
 		Categories.add(new Categorie("None"));
 
+		Categories.get(0).addVideo(new Video("C:/Users/toupt/Downloads/ProjetIHM/videos/test.mp4"));
+
 		// On charge le fichier FXML
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLs/accueil.fxml"));
 		Parent root = loader.load();

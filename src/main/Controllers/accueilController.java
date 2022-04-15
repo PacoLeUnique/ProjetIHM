@@ -70,7 +70,7 @@ public class accueilController {
                                                                             BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=2 && Users.get(1)!=null) {
-            this.Pseudo2.setText(Users.get(0).getPseudo());
+            this.Pseudo2.setText(Users.get(1).getPseudo());
             this.Image2.setBackground(new Background(new BackgroundImage(   Users.get(1).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -78,7 +78,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=3 && Users.get(2)!=null) {
-            this.Pseudo3.setText(Users.get(0).getPseudo());
+            this.Pseudo3.setText(Users.get(2).getPseudo());
             this.Image3.setBackground(new Background(new BackgroundImage(   Users.get(2).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -86,7 +86,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=4 && Users.get(3)!=null) {
-            this.Pseudo4.setText(Users.get(0).getPseudo());
+            this.Pseudo4.setText(Users.get(3).getPseudo());
             this.Image4.setBackground(new Background(new BackgroundImage(   Users.get(3).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -94,7 +94,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=5 && Users.get(4)!=null) {
-            this.Pseudo5.setText(Users.get(0).getPseudo());
+            this.Pseudo5.setText(Users.get(4).getPseudo());
             this.Image5.setBackground(new Background(new BackgroundImage(   Users.get(4).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -102,7 +102,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=6 && Users.get(5)!=null) {
-            this.Pseudo6.setText(Users.get(0).getPseudo());
+            this.Pseudo6.setText(Users.get(5).getPseudo());
             this.Image6.setBackground(new Background(new BackgroundImage(   Users.get(5).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -110,7 +110,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=7 && Users.get(6)!=null) {
-            this.Pseudo7.setText(Users.get(0).getPseudo());
+            this.Pseudo7.setText(Users.get(6).getPseudo());
             this.Image7.setBackground(new Background(new BackgroundImage(   Users.get(6).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
@@ -118,7 +118,7 @@ public class accueilController {
                     BackgroundSize.DEFAULT)));
         }
         if(nombreUsers>=8 && Users.get(7)!=null) {
-            this.Pseudo8.setText(Users.get(0).getPseudo());
+            this.Pseudo8.setText(Users.get(7).getPseudo());
             this.Image8.setBackground(new Background(new BackgroundImage(   Users.get(7).getImage(),
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,

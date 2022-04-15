@@ -301,5 +301,5 @@ public class VideoLecteurController implements Initializable {
 		return xmouse/length;
 	}
 
-	public void sendVideo(Video Video){ this.video=Video;}
+	//public void sendVideo(Video Video){ this.video=Video;}
 }

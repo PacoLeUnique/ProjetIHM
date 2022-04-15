@@ -27,7 +27,23 @@ public class loginController {
     private ArrayList<Categorie> categories;
     private ArrayList<Utilisateur> users;
 
-    public void login(ActionEvent actionEvent) {
+    public void login(ActionEvent actionEvent) throws IOException {
+
+        System.out.print(password_field.getText());
+        if(user.checkPassword(password_field.getText())) {
+            // On charge le fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/categorieSelector.fxml"));
+            Parent root = loader.load();
+            categorieController Controller = loader.getController();
+
+            // On transmet le Model
+            Controller.sendModel(this.categories, this.users, this.user);
+
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 800, 600);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void goto_accueil(ActionEvent actionEvent) throws IOException {

@@ -40,7 +40,7 @@ public class Utilisateur {
     /** Change le pseudo */
     public void setPseudo(String nouveauPseudo) { this.pseudo=nouveauPseudo; }
     /** Verifie si le mot de passe est bon */
-    public Boolean checkPassword(String Password) { return password==Password; }
+    public Boolean checkPassword(String Password) { return password.equals(Password); }
     /** Change l'image de profil */
     public void changeImage(String Pathname) { this.image = new Image(Pathname,150,150, false, false); }
 }

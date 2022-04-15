@@ -67,7 +67,7 @@ public class VideoSelectorController {
 
         if(Video!=null) {
             // On transmet le Model
-            Controller.sendVideo(Video);
+            //Controller.sendVideo(Video);
 
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             Scene scene = new Scene(root, 800, 600);
@@ -99,7 +99,7 @@ public class VideoSelectorController {
     public void goto_categories(ActionEvent actionEvent) throws IOException  {
 
         // On charge le fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/Categories.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/categorieSelector.fxml"));
         Parent root = loader.load();
         categorieController Controller = loader.getController();
 

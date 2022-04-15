@@ -32,7 +32,7 @@ public class categorieController {
     public void goto_categorie(ActionEvent actionEvent, ArrayList<Video> Videos) throws IOException {
 
         // On charge le fxml
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/categorieSelector.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/VideoSelector.fxml"));
         Parent root = loader.load();
         VideoSelectorController Controller = loader.getController();
 
