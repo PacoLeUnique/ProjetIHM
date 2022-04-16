@@ -2,6 +2,7 @@ package main.Controllers;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -29,6 +30,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.Categorie;
 import main.Utilisateur;
+import main.Video;
 
 public class VideoLecteurController implements Initializable {
 	
@@ -227,12 +229,12 @@ public class VideoLecteurController implements Initializable {
 		timer.cancel();
 		timer.purge();
 		
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/accueil.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXMLs/categorieSelector.fxml"));
         Parent root = loader.load();
-        accueilController controller = loader.getController();
+        categorieController controller = loader.getController();
 
         // On fait passer le modele
-        controller.sendModel(categories, users);
+        controller.sendModel(categories, users, user);
 
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root, 800,600);
@@ -301,5 +303,10 @@ public class VideoLecteurController implements Initializable {
 		return xmouse/length;
 	}
 
-	//public void sendVideo(Video Video){ this.video=Video;}
+	public void sendVideo(ArrayList<Categorie> Categories, ArrayList<Utilisateur> Users, Utilisateur User, Video Video){
+		this.categories=Categories;
+		this.users=Users;
+		this.user=User;
+		this.pathname=Video.getPathname();
+	}
 }

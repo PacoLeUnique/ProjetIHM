@@ -67,7 +67,7 @@ public class VideoSelectorController {
 
         if(Video!=null) {
             // On transmet le Model
-            //Controller.sendVideo(Video);
+            Controller.sendVideo(categories,users,user,Video);
 
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             Scene scene = new Scene(root, 800, 600);
