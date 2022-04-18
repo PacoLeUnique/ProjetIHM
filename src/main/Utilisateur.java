@@ -1,5 +1,7 @@
 package main;
 
+import java.net.URISyntaxException;
+
 import javafx.scene.image.Image;
 
 public class Utilisateur {
@@ -15,19 +17,20 @@ public class Utilisateur {
      * @param Pseudo Nom de l'utilisateur
      * @param Rang Si l'utilisateur est soit ADULT, ADO ou ENFANT | par default l'utilisateur est ENFANT (facultatif)
      * @param Password Mot de passe de l'utilisateur (facultatif)
+     * @throws URISyntaxException 
      */
-    public Utilisateur(String Pseudo, Rang Rang, String Password) {
+    public Utilisateur(String Pseudo, Rang Rang, String Password) throws URISyntaxException {
         this.pseudo = Pseudo;
         this.rang = Rang;
         this.password = Password;
-        this.image = new Image("src/main/user_icon.png", 150,150, false, false);
+        this.image = new Image(getClass().getResource("user_icon.png").toExternalForm(), 150,150, false, false);
     }
 
     public Utilisateur(String Pseudo) {
         this.pseudo = Pseudo;
         this.rang = Rang.ENFANT;
         this.password = "";
-        this.image = new Image("src/main/user_icon.png",150,150, false, false);
+        this.image = new Image(getClass().getResource("user_icon.png").toExternalForm(),150,150, false, false);
     }
 
     /** Getter du pseudo */

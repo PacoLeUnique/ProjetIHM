@@ -27,7 +27,7 @@ public class Video {
         this.pathname = Pathname;
         String[] pathname_ = Pathname.split("/");
         this.titre = pathname_[pathname_.length-1];
-        this.miniature = new Image("src/main/BlackScreen.png", 150,150, false, false);
+        this.miniature = new Image(getClass().getResource("BlackScreen.png").toExternalForm(), 150,150, false, false);
     }
 
     /** Getter du chemin */

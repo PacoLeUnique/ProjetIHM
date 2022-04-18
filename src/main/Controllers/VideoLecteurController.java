@@ -57,7 +57,7 @@ public class VideoLecteurController implements Initializable {
 	private boolean isMouseOnProgressBar, isSliderDragged;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		file = new File("videos/dog.mp4");
+		file = new File("videos/dog.mp4");   // ça devrait être pathname
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
